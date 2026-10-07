@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ZeeSkillTech design system. Brand colours (--pri / --acc) are injected from app/layout.js. */
+:root{--pri:8 128 90;--acc:245 158 11}
+
+@layer base{
+ html{@apply scroll-smooth}
+ html[data-theme=dark]{color-scheme:dark}
+ body{@apply min-h-screen bg-slate-50 font-sans text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300}
+ h1,h2,h3,h4{@apply font-head font-bold tracking-tight;color:rgb(15 23 42)}
+ :where([data-theme=dark]) :is(h1,h2,h3,h4){color:#fff}
+ h1{@apply mb-4 text-3xl md:text-4xl} h2{@apply mb-3 text-2xl} h3{@apply mb-2 text-lg}
+ main h3{@apply mt-6}
+ p{@apply mb-3 leading-relaxed} ul{@apply mb-3 list-disc pl-6}
+ a{color:rgb(var(--pri))} a:hover{text-decoration:underline}
+ :where([data-theme=dark]) a{color:#6ee7b7}
+ a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{@apply outline-none ring-2 ring-pri ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-950}
+ main{@apply mx-auto w-full max-w-5xl px-4 py-8}
+ input,select,textarea{@apply my-1.5 block w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-pri focus:ring-4 focus:ring-pri/15 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500}
+ textarea{@apply min-h-[6rem] resize-y}
+ input[type=checkbox],input[type=radio]{@apply my-0 inline-block w-auto accent-pri}
+ input[type=color]{@apply h-10 w-16 cursor-pointer p-1}
+ input[type=file]{@apply cursor-pointer}
+ button{@apply my-1.5 inline-flex items-center justify-center gap-2 rounded-xl bg-pri px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-pri/30 disabled:cursor-not-allowed disabled:opacity-60}
+ button+button{@apply ml-2}
+ table{@apply w-full text-sm}
+ th{@apply whitespace-nowrap px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400}
+ td{@apply border-b border-slate-100 px-3 py-3 align-top dark:border-slate-800}
+ tbody tr:last-child td{@apply border-b-0}
+ label{@apply text-slate-700 dark:text-slate-300}
+ summary::-webkit-details-marker{display:none}
+}
+
+@layer components{
+ /* Cards */
+ .card{@apply mb-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-slate-800}
+ .card-title{@apply mb-1 mt-0 text-base font-semibold}
+ .cols{@apply grid gap-4;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+ .cols .card,.grid>.card{@apply mb-0}
+ .box{@apply mx-auto mt-10 max-w-md rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-slate-800}
+ .big{@apply font-head text-2xl font-extrabold text-pri dark:text-emerald-300}
+ .price{@apply font-head text-3xl font-extrabold text-pri dark:text-emerald-300}
+
+ /* Buttons: .btn (primary) + .alt (accent) / .out (outline) / .btn-soft / .btn-ghost / .btn-danger / .btn-sm / .btn-lg / .btn-icon */
+ .btn{@apply m-0 inline-flex items-center justify-center gap-2 rounded-xl bg-pri px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:no-underline hover:brightness-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pri/30 disabled:pointer-events-none disabled:opacity-60 dark:text-white}
+ .btn.alt{@apply bg-acc text-slate-900 dark:text-slate-900}
+ .btn.out{@apply bg-transparent text-pri shadow-none ring-2 ring-inset ring-pri hover:bg-pri/5 dark:text-emerald-300 dark:ring-emerald-300}
+ .btn-soft{@apply bg-pri/10 text-pri shadow-none hover:bg-pri/15 hover:brightness-100 dark:bg-emerald-400/15 dark:text-emerald-200}
+ .btn-ghost{@apply bg-transparent text-slate-700 shadow-none hover:bg-slate-100 hover:brightness-100 dark:text-slate-200 dark:hover:bg-slate-800}
+ .btn-danger{@apply bg-red-600 text-white dark:text-white}
+ .btn-sm{@apply px-3.5 py-2 text-xs}
+ .btn-lg{@apply px-6 py-3 text-base}
+ .btn-icon{@apply m-0 inline-grid h-9 w-9 flex-none place-items-center rounded-full bg-slate-100 p-0 text-slate-700 shadow-none hover:bg-slate-200 hover:brightness-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700}
+ button.sec{@apply bg-slate-100 text-slate-800 shadow-none hover:bg-slate-200 hover:brightness-100 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700}
+ button.danger{@apply bg-red-600 text-white}
+
+ /* Forms */
+ .field{@apply mb-4 block}
+ .label{@apply mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200}
+ .hint{@apply mt-1 block text-xs text-slate-500 dark:text-slate-400}
+ .field-error{@apply mt-1 block text-xs font-medium text-red-600 dark:text-red-400}
+
+ /* Badges */
+ .badge{@apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold}
+ .badge-success{@apply bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300}
+ .badge-warn{@apply bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-300}
+ .badge-danger{@apply bg-red-100 text-red-700 dark:bg-red-500/15 dark:text-red-300}
+ .badge-info{@apply bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300}
+ .badge-muted{@apply bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300}
+
+ /* Alerts */
+ .alert{@apply mb-4 flex items-start gap-3 rounded-xl border px-4 py-3 text-sm}
+ .alert-info{@apply border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-100}
+ .alert-success{@apply border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-100}
+ .alert-warn{@apply border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-100}
+ .alert-danger{@apply border-red-200 bg-red-50 text-red-900 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-100}
+
+ /* Tables, tabs, loading */
+ .table-wrap{@apply overflow-x-auto}
+ .tabs{@apply mb-6 flex gap-1 overflow-x-auto rounded-2xl bg-white p-1.5 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-slate-800}
+ .tab{@apply m-0 inline-flex flex-none items-center gap-2 whitespace-nowrap rounded-xl bg-transparent px-4 py-2 text-sm font-semibold text-slate-600 shadow-none hover:bg-slate-100 hover:brightness-100 dark:text-slate-300 dark:hover:bg-slate-800}
+ .tab[aria-current=page],.tab[aria-current=page]:hover{@apply bg-pri text-white dark:text-white}
+ .skeleton{@apply animate-pulse rounded-xl bg-slate-200 motion-reduce:animate-none dark:bg-slate-800}
+
+ /* Modal (native <dialog>: focus trap + Esc handled by the browser) */
+ dialog.modal{@apply m-auto w-[calc(100%-2rem)] max-w-md rounded-2xl border-0 bg-white p-0 text-slate-700 shadow-2xl dark:bg-slate-900 dark:text-slate-300}
+ dialog.modal::backdrop{background:rgb(2 6 23 / .6);backdrop-filter:blur(2px)}
+
+ /* Certificate */
+ .cert{@apply rounded-3xl border-4 border-double border-pri bg-white p-10 text-center shadow-sm dark:bg-slate-900}
+
+ /* Landing marquee */
+ .mq{@apply flex w-max gap-4;animation:mq 45s linear infinite}
+ .mq:hover{animation-play-state:paused}
+}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}}
+@supports (animation-timeline:view()){.reveal{animation:fadeup linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@media(prefers-reduced-motion:reduce){.mq{animation:none}.reveal{animation:none}html{scroll-behavior:auto}}
+@media print{nav,header,footer,.noprint{display:none!important}body{background:#fff!important;color:#000!important}.card,.cert{box-shadow:none!important}}

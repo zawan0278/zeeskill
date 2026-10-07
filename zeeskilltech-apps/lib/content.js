@@ -1,0 +1,23 @@
+// All landing-page text lives here. Plan prices/commissions must match the `plans` table in Supabase.
+// IMPORTANT: replace the stats/rating/bio below with REAL numbers before launch (fake claims can mislead users).
+import {legalDocs} from './legal';
+export const C={brand:'ZeeSkillTech',tag:'Seekho, Kamao, Aage Barho',desc:"Pakistan's skill-based online learning platform with a refer & earn partner program.",
+ wa:'923292393630',email:'zawan0278@gmail.com',phone:'+92 329 2393630',addr:'Pakistan',map:'', /* paste the src URL from Google Maps > Share > Embed a map */
+ theme:{pri:'#08805A',acc:'#F59E0B'}, /* brand colours, editable in admin */
+ hero:{a:'Seekho Skills.',b:'Kamao Online.',sub:'Learn in-demand freelancing and digital skills, get certified, then share and earn with our partner program. Simple, honest, step by step.',badge:'Trusted by 10,000+ users',rating:'4.8/5',img:''},
+ stats:[['Expert Tutors',50],['Live Trainings',300],['Students Enrolled',10000],['Community Earnings (PKR)',5000000]],
+ steps:[['Learn','Pick skill courses'],['Get Membership','One-time plan fee'],['Get Leads','Share your referral link'],['Get Sales','Friends join and learn'],['Get Paid','Withdraw via JazzCash/Easypaisa']],
+ plans:[{id:'basic',n:'Basic',old:5999,p:2999,c:15,d:'2 Months',r:4.6,l1:20,l2:5,feat:['15 skill courses','Certificate of completion','Community access','Email support']},
+  {id:'standard',n:'Standard',old:11999,p:5999,c:30,d:'4 Months',r:4.8,l1:30,l2:8,feat:['30 skill courses','Live weekly trainings','Certificate + portfolio review','Priority WhatsApp support']},
+  {id:'pro',n:'Pro',old:19999,p:9999,c:50,d:'6 Months',r:4.9,l1:40,l2:10,feat:['50+ courses, lifetime access','1-on-1 mentor sessions','Client & job leads support','Partner program bonuses']}],
+ how:[['📘','Learn','Finish your courses'],['📝','Apply','Join partner program'],['🔗','Leads','Share your link'],['💰','Sales','Earn commission']],
+ courses:[['Freelancing Basics','Fiverr & Upwork start','💼'],['Graphic Design','Canva & Photoshop','🎨'],['Spoken English','Confidence ke saath','🗣️'],['AI Tools for Work','ChatGPT & more','🤖'],['Video Editing','Reels to YouTube','🎬'],['Social Media Marketing','Grow any page','📱'],['Web Development','HTML to React','💻'],['Digital Marketing','Ads & SEO','📈'],['Content Writing','Write and earn','✍️'],['Affiliate Marketing','Promote, earn, repeat','🤝']],
+ why:[['🎯','Skill-Based Courses','Practical lessons, not just theory.'],['🎓','Certification','Verifiable certificate on completion.'],['🔁','Refer & Earn','Two-level commissions on referrals.'],['🤝','Partner Program','Extra bonuses for top partners.']],
+ social:[['WhatsApp','💬','https://wa.me/923292393630'],['YouTube','▶️','#'],['Instagram','📸','#'],['Facebook','👍','#']],
+ pay:"Pay only to our official accounts: JazzCash / SadaPay 03292393630 and Easypaisa 03446208697 (account title: Muhammad Zeeshan Akram). Never send money to any other number or agent.",
+ accounts:[['JazzCash / SadaPay','03292393630','Muhammad Zeeshan Akram'],['Easypaisa','03446208697','Muhammad Zeeshan Akram']],
+ founder:{n:'Usman Tariq',img:'',bio:'Freelancer-turned-educator who built ZeeSkillTech to teach real skills and share the earnings fairly. (Replace with your real bio.)'},
+ team:[['Ayesha Khan','Lead Tutor'],['Bilal Ahmed','Community Manager'],['Sana Malik','Student Success'],['Hamza Raza','Tech Lead']],
+ faqs:[['What is ZeeSkillTech?','An online platform with skill-based courses and a refer & earn partner program.'],['How does commission work?','When someone joins with your referral link and their payment is verified, you earn a percentage of their plan fee: Level 1 directly, Level 2 from their referrals.'],['What is the affiliate program?','After enrolling you get a personal link. Share it honestly and earn when people join.'],['Is the fee one-time?','Yes. Pay once for your plan, no hidden monthly charges.'],['How do I withdraw earnings?','Via JazzCash, SadaPay, Easypaisa or bank transfer from your dashboard.'],['What are the withdrawal limits?','Minimum PKR 500 and maximum PKR 50,000 per request.'],['Can I upgrade my plan later?','Yes, submit a payment for the higher plan from your dashboard.'],['Do I get a certificate?','Yes, on completing your courses.'],['Do I need experience?','No. Courses start from zero, in simple English with Urdu help.'],['Is there a refund?','Refunds follow our Refund Policy.']],
+ legalDocs,legal:[['privacy','Privacy Policy'],['terms','Terms & Conditions'],['eua','End User Agreement'],['refund','Refund Policy'],['disclaimer','Disclaimer'],['commission','Commission Plan']]};
+export const pkr=n=>'PKR '+n.toLocaleString('en-PK');
